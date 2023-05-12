@@ -9,7 +9,7 @@ function Home() {
           <section className="openingSection">
 
             <div className="openingText">
-              <h1>Lorem ipsum dolor</h1>
+              <h1 id="mainHeading">Lorem ipsum dolor</h1>
               <p>Quem vide tincidunct pri ei, id mea ominum denique</p> 
 
               <Link className="centralContact" to="/contact-us" >
@@ -20,14 +20,18 @@ function Home() {
 
           </section>
 
-          <section className="centralRow">
+          <section className="secondRow">
 
           </section> 
 
-          <section className="bottomRow">
+          <section className="thirdRow">
 
           </section> 
       
+          <section className="fourthRow">
+
+          </section> 
+
       </nav>
     );
   }

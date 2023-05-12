@@ -126,14 +126,23 @@ body{
   font-weight: bold;
 }
 
-.centralRow{
+.secondRow{
   height: 390px;
-  background-color: rgb(182, 182, 182);
-  padding-top: 300px important!;
 }
 
-.bottomRow{
+.thirdRow{
   height: 390px;
+  background-color: rgb(182, 182, 182);
+}
+
+.fourthRow{
+  height: 390px;
+}
+
+#mainHeading{
+  font-size: xx-large;
+  font-weight: 200;
+  margin-bottom: 0;
 }
 
 /* CSS for Footer */
@@ -142,8 +151,17 @@ body{
   color: grey;
 }
 
-.Footer >p {
+.Footer > p {
 float: right;
 margin-right: 100px;
 font-size: small;
+}
+
+@media (max-width: 500px) {
+  .Footer > p {
+    float: none;
+    margin-right: 0;
+   display: flex;
+   justify-content: center;
+  }
 }
