@@ -67,14 +67,15 @@ body{
   position: relative;
 }
 
-.openingImage {
+.openingSection {
   background-image: url(./images/blueglasseshat.jpg);
-  min-height: 390px;
-  background-size: 100% auto;
+  height: 390px;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center 25%;
   position: relative;
 }
+
 
 .openingText {
   position: absolute;
@@ -87,7 +88,7 @@ body{
 }
 
 
- .openingImage::before {
+ .openingSection::before {
   content: "";
   position: absolute;
   top: 0;
@@ -99,7 +100,6 @@ body{
   mix-blend-mode: multiply;
 }
  
-
 @media (max-width: 675px) {
   .openingText{
     left: 40%;
@@ -107,93 +107,9 @@ body{
   }
 } 
 
-@media (max-width: 500px) {
-  .openingImage::before{
-    height: 90%;
-    margin-top: 10px;
-  }
-} 
-
-@media (max-width: 460px) {
-  .openingImage::before{
-    height: 85%;
-    margin-top: 10px;
-  }
-} 
-
-@media (max-width: 460px) {
-  .openingImage::before{
-    height: 80%;
-    margin-top: 20px;
-  }
-} 
-
-@media (max-width: 423px) {
-  .openingImage::before{
-    height: 75%;
-    margin-top: 27px;
-  }
-} 
-
-@media (max-width: 400px) {
-  .openingImage::before{
-    height: 72%;
-    margin-top: 27px;
-  }
-} 
-
-@media (max-width: 375px) {
-  .openingImage::before{
-    height: 68%;
-    margin-top: 27px;
-  }
-} 
-
-@media (max-width: 360px) {
-  .openingImage::before{
-    height: 64%;
-    margin-top: 35px;
-  }
-} 
-
 @media (max-width: 345px) {
   .openingText{
     font-size: x-small;
-  }
-}
-
-@media (max-width: 340px) {
-  .openingImage::before{
-    height: 57%;
-    margin-top: 40px;
-  }
-} 
-
-@media (max-width: 300px) {
-  .openingImage::before{
-    height: 55%;
-    margin-top: 42px;
-  }
-}
-
-@media (max-width: 300px) {
-  .openingImage::before{
-    height: 55%;
-    margin-top: 42px;
-  }
-}
-
-@media (max-width: 290px) {
-  .openingImage::before{
-    height: 52%;
-    margin-top: 44px;
-  }
-}
-
-@media (max-width: 280px) {
-  .openingImage::before{
-    height: 51%;
-    margin-top: 47px;
   }
 }
 
@@ -213,6 +129,7 @@ body{
 .centralRow{
   height: 390px;
   background-color: rgb(182, 182, 182);
+  padding-top: 300px important!;
 }
 
 .bottomRow{

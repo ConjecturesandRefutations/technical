@@ -6,7 +6,7 @@ function Home() {
     return (
       <nav className='Home'>
   
-          <section className="openingImage">
+          <section className="openingSection">
 
             <div className="openingText">
               <h1>Lorem ipsum dolor</h1>
