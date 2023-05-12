@@ -39,6 +39,9 @@ body{
   text-decoration: none;
   padding-left: 20px;
   padding-right: 20px;
+  background: #e9f5ff;
+  border-radius: 4px;
+  padding: 8px 16px;
 }
 
 @media (max-width: 800px) {
@@ -97,13 +100,12 @@ body{
 }
  
 
-@media (max-width: 600px) {
-  .openingImage::before{
-    height: 95%;
-    margin-top: 10px;
+@media (max-width: 675px) {
+  .openingText{
+    left: 40%;
+    transform: translate(-50%, -50%);
   }
 } 
-
 
 @media (max-width: 500px) {
   .openingImage::before{
@@ -154,12 +156,11 @@ body{
   }
 } 
 
-@media (max-width: 350px) {
+@media (max-width: 345px) {
   .openingText{
-    left: 50%;
-    transform: translate(-50%, -50%);
+    font-size: x-small;
   }
-} 
+}
 
 @media (max-width: 340px) {
   .openingImage::before{
@@ -194,4 +195,38 @@ body{
     height: 51%;
     margin-top: 47px;
   }
+}
+
+.centralContact{
+  background: #0890f1;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-size: x-small;
+  font-weight: bold;
+}
+
+.centralRow{
+  height: 390px;
+  background-color: rgb(182, 182, 182);
+}
+
+.bottomRow{
+  height: 390px;
+}
+
+/* CSS for Footer */
+
+.Footer{
+  color: grey;
+}
+
+.Footer >p {
+float: right;
+margin-right: 100px;
+font-size: small;
 }
