@@ -4,7 +4,13 @@ function Home() {
     return (
       <nav className='Home'>
   
-      <h1>Home</h1>
+          <div className="openingImage">
+
+            <div className="openingText">
+              <h1>Lorem ipsum dolor</h1> 
+            </div> 
+
+          </div>
       
       </nav>
     );

@@ -4,13 +4,17 @@ body{
   width: 106%;
 }
 
+/* CSS for Navbar */
+
 .Navbar{
   height: 54px;
   display: flex;
   align-items: center;
+  margin-bottom: 0;
 }
 
 .companyLogo{
+  position: fixed;
   height: 22px;
   margin-left: 16%;
 }
@@ -52,3 +56,142 @@ body{
     transform: translate(-50%);
   }
 } 
+
+
+/* CSS for Home */
+
+.Home{
+  position: relative;
+}
+
+.openingImage {
+  background-image: url(./images/blueglasseshat.jpg);
+  min-height: 390px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center 25%;
+  position: relative;
+}
+
+.openingText {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  z-index: 9999;
+}
+
+
+ .openingImage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 10), rgba(0, 0, 0, 0));
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+ 
+
+@media (max-width: 600px) {
+  .openingImage::before{
+    height: 95%;
+    margin-top: 10px;
+  }
+} 
+
+
+@media (max-width: 500px) {
+  .openingImage::before{
+    height: 90%;
+    margin-top: 10px;
+  }
+} 
+
+@media (max-width: 460px) {
+  .openingImage::before{
+    height: 85%;
+    margin-top: 10px;
+  }
+} 
+
+@media (max-width: 460px) {
+  .openingImage::before{
+    height: 80%;
+    margin-top: 20px;
+  }
+} 
+
+@media (max-width: 423px) {
+  .openingImage::before{
+    height: 75%;
+    margin-top: 27px;
+  }
+} 
+
+@media (max-width: 400px) {
+  .openingImage::before{
+    height: 72%;
+    margin-top: 27px;
+  }
+} 
+
+@media (max-width: 375px) {
+  .openingImage::before{
+    height: 68%;
+    margin-top: 27px;
+  }
+} 
+
+@media (max-width: 360px) {
+  .openingImage::before{
+    height: 64%;
+    margin-top: 35px;
+  }
+} 
+
+@media (max-width: 350px) {
+  .openingText{
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+} 
+
+@media (max-width: 340px) {
+  .openingImage::before{
+    height: 57%;
+    margin-top: 40px;
+  }
+} 
+
+@media (max-width: 300px) {
+  .openingImage::before{
+    height: 55%;
+    margin-top: 42px;
+  }
+}
+
+@media (max-width: 300px) {
+  .openingImage::before{
+    height: 55%;
+    margin-top: 42px;
+  }
+}
+
+@media (max-width: 290px) {
+  .openingImage::before{
+    height: 52%;
+    margin-top: 44px;
+  }
+}
+
+@media (max-width: 280px) {
+  .openingImage::before{
+    height: 51%;
+    margin-top: 47px;
+  }
+}
