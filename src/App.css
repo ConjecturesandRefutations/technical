@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Poppins:wght@200&display=swap');
 
 body{
-  width: 106%;
+  width: calc(100% + 6%);
   font-family: 'Poppins', sans-serif;
 }
+
+ @media (max-width: 948px) {
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+} 
 
 /* CSS for Navbar */
 
@@ -15,14 +22,14 @@ body{
 }
 
 .companyLogo{
-  position: fixed;
+  /* position: fixed; */
   height: 22px;
   margin-left: 16%;
 }
 
 .links{
-  position: fixed;
-  right: 10%;
+   position: absolute; 
+  right: 15%;
   font-weight: bold;
   font-size: x-small;
 }
@@ -69,7 +76,7 @@ body{
 
 .openingSection {
   background-image: url(./images/blueglasseshat.jpg);
-  height: 390px;
+  min-height: 390px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center 25%;
@@ -127,15 +134,8 @@ body{
 
 .secondRow{
   min-height: 390px;
-}
-
-.thirdRow{
-  min-height: 390px;
-  background-color: rgb(182, 182, 182);
-}
-
-.fourthRow{
-  min-height: 390px;
+  display: flex;
+  align-items: center; 
 }
 
 #mainHeading{
@@ -144,17 +144,15 @@ body{
   margin-bottom: 0;
 }
 
-.secondRow {
-  display: flex;
-  align-items: center; 
-}
-
 .secondText {
   flex: 1;
   margin-left: 16%;
-  font-size: small;
   max-width: 500px;
   margin-right: 50px;
+}
+
+.secondText > p, ul {
+  font-size: x-small;
 }
 
 .firstList{
@@ -222,6 +220,127 @@ body{
     width: 90%;
   }
 }
+
+.thirdRow{
+  background-image: url(./images/blueglasses.jpg);
+  min-height: 390px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  color: white;
+}
+
+.thirdText{
+  margin-left: 14%;
+  max-width: 400px;
+  background-color: rgba(29, 29, 29, 0.5);
+  position: absolute;
+  margin-top: 60px;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.thirdText > p {
+  font-size: small;
+}
+
+@media (max-width: 500px) {
+  .thirdText {
+margin-left: 40%;
+transform: translate(-50%);
+min-width: 270px;
+  }
+  .thirdRow{
+    background-position: center 25%;
+  }
+}
+
+@media (max-width: 400px) {
+  .thirdText {
+    margin-left: 50%;
+    transform: translate(-50%);
+    min-width: 270px;
+  }
+
+}
+
+.fourthRow{
+  min-height: 390px;
+}
+
+.fourthText{
+  margin-left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.fourthText >h1 {
+  font-size: medium;
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+.fourthText >h3 {
+  font-weight: 900;
+  font-size: small;
+}
+
+.fourthTextBulk {
+  font-weight: bold;
+  font-size: x-small;
+  margin-left: 14%;
+  margin-right: 16%;
+  column-count: 3;
+  column-gap: 20px;
+}
+
+@media (max-width: 780px) {
+  .fourthTextBulk {
+  column-count: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .fourthTextBulk {
+    margin-left: 50%;
+    transform: translate(-50%);
+    min-width: 350px;
+  }
+}
+
+@media (max-width: 400px) {
+  .fourthText >h1 {
+    white-space: normal;
+    min-width: 300px;
+  }
+  .fourthText >h3 {
+    min-width: 300px;
+  }
+  .fourthTextBulk {
+    min-width: 300px;
+  }
+}
+
+@media (max-width: 330px) {
+  .fourthText >h1 {
+    width: 150px;
+    margin-left: 10%;
+  }
+  .fourthText >h3 {
+    width: 150px;
+    margin-left: 10%;
+  }
+  .fourthTextBulk {
+    max-width: 150px;
+    margin-left: 53%;
+    min-height: 500px;
+  }
+}
+
+/* CSS for footer */
 
 
 .Footer{
