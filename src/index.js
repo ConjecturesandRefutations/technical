@@ -5,16 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from "react-router-dom";
 
-import { PictureProviderWrapper } from './context/picture.context';
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
-    <PictureProviderWrapper>
       <App />
-    </PictureProviderWrapper>
     </Router>
   </React.StrictMode>
 );

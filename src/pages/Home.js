@@ -1,8 +1,5 @@
-import { useState, useContext, useEffect } from 'react'; 
+import { useState } from 'react'; 
 import { Link } from "react-router-dom"
-
-
-import { PictureContext } from './../context/picture.context'; 
 
 import BlueGlasses from './../images/blueglasseshat.jpg'
 import OrangeChairs from './../images/orangechairs.jpg'
@@ -10,19 +7,18 @@ import Screen from './../images/orangechairsscreen.jpg'
 
 function Home() {
 
-  const { picture, togglePicture } = useContext(PictureContext);
   const [backgroundImage, setBackgroundImage] = useState(BlueGlasses);
 
-  useEffect(() => {
-    if (picture === 'one') {
-      setBackgroundImage(BlueGlasses);
-    } else if (picture === 'two') {
+  const togglePicture = () => {    
+    if (backgroundImage === BlueGlasses) {
       setBackgroundImage(OrangeChairs);
+    } else {
+      setBackgroundImage(BlueGlasses);
     }
-  }, [picture]);
+  };
 
     return (
-      <nav className='Home' >
+      <div className='Home' >
   
           <section className="openingSection" style={{ backgroundImage: `url(${backgroundImage})`}}>
 
@@ -60,7 +56,7 @@ function Home() {
                             <li>Turpis massa tincidunt dui ut ornare lectus.</li>
                           </ul>
 
-                          <Link id="learnMore" to="#" >
+                          <Link id="learnMore" to="/about" >
                               <a >Learn More</a>
                             </Link>
 
@@ -104,7 +100,7 @@ Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit amet.</p>
 
           </section> 
 
-      </nav>
+      </div>
     );
   }
   

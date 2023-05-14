@@ -8,13 +8,13 @@ function Navbar() {
 
     return (
       <nav className='Navbar'>
-
-           <img src={company} className="companyLogo"/>        
+        
+           <img src={company} className="companyLogo"/>   
   
-        <div className="links">
-            <Link className="buttons" to="/" >
-              <a id='homeButton'>HOME</a>
-            </Link>
+            <div className="links">
+                <Link className="buttons" to="/" >
+                  <a id='homeButton'>HOME</a>
+                </Link>
 
             <Link className="buttons" to="/about-us" >
               <a id='aboutButton'>ABOUT US</a>
@@ -28,7 +28,6 @@ function Navbar() {
               <a>Log in</a>
             </Link>
         </div>
-
       
       </nav>
     );
