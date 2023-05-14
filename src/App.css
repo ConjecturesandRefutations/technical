@@ -294,7 +294,7 @@ hr {
     justify-content: center;
   } 
   #loginCenter{
-    width: 250px;
+    width: 220px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -315,7 +315,7 @@ hr {
   max-width: 400px;
   background-color: rgba(29, 29, 29, 0.5);
   position: absolute;
-  margin-top: 60px;
+  margin-top: 30px;
   padding: 20px;
   border-radius: 4px;
 }
