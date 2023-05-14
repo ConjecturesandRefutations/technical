@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
@@ -5,10 +6,20 @@ import ContactImage from './../images/Img_Contact.png'
 
 function ContactUs() {
 
+  const [secondPhone, setSecondPhone] = useState(false);
+  const [showAddress, setShowAddress] = useState(false);
+
+  const toggleSecondPhone = (e) => {
+    e.preventDefault(); 
+    setSecondPhone(!secondPhone); 
+  }
+
+  const toggleShowAddress = (e) => {
+    setShowAddress(!showAddress); 
+  }
 
     return (
 
-      
       <div className='ContactUs'>   
           <hr id='secondHr'/>
         <div className="contactText">
@@ -37,12 +48,14 @@ function ContactUs() {
                 <input className='inputStyle'/>
               </div>
 
+              {secondPhone &&
               <div id='phoneTwo'>
                 <p>Phone number 02 - <span style={{fontStyle:'italic'}}>optional</span></p>
                 <input className='inputStyle' style={{marginBottom:20}}/>
               </div>
+              }
 
-              <input id='newPhone' placeholder='Add new phone number' className='inputStyle'/>
+              <button id='newPhone' className='inputStyle' onClick={toggleSecondPhone}>{ !secondPhone ? 'Add new phone' : 'Remove phone' }</button>
 
               <div>
                 <p>Message</p>
@@ -50,7 +63,8 @@ function ContactUs() {
               </div>
 
               <div id='checkbox'>
-                <input type='checkbox'/>
+                <input type='checkbox' checked={showAddress}
+                   onChange={(event) => setShowAddress(event.target.checked)}/>
                 <label>Add address details</label>
               </div>
 
@@ -59,6 +73,50 @@ function ContactUs() {
                   <input type="submit" name="submit" id="submit" class="submit-button" value="Submit"/>
               </div>
 
+              { showAddress ?
+
+              <>
+
+              <div className='formFirstRow'>
+                
+              <div>
+                <p>Address line 1</p>
+                <input id='addressInput' style={{marginRight:20}}/>
+              </div>
+
+                <div>
+                  <p>Address line 2</p>
+                  <input id='adressTwoInput'/>
+              </div>
+  
+            </div>
+
+            <div className='formSecondRow'>
+              <div>
+                <p>City/Town</p>
+                <input id='cityInput' style={{width:75, marginRight:13}}/>
+              </div>
+
+                <div>
+                  <p>State/County</p>
+                  <input id='countyInput' style={{width:75, marginRight:13}}/>
+              </div>
+              <div>
+                <p>Postcode</p>
+                <input id='postcode' style={{width:75, marginRight:13}}/>
+              </div>
+
+                <div>
+                  <p>Country</p>
+                  <input id='country' style={{width:75, marginRight:13}}/>
+              </div>
+  
+            </div>
+
+            </>
+
+            : null}
+                            
           </form>
 
         </div>

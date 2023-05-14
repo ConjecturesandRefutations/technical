@@ -597,6 +597,24 @@ textarea::placeholder {
   color: white;
 }
 
+#newPhone{
+  height: 30px;
+  width: 369px;
+  margin-top: 20px;
+  color: blue;
+  font-weight: bold;
+}
+
+.formSecondRow{
+  display: flex;
+  flex-direction: row;
+  max-width: 369px;
+}
+
+#country {
+  max-width: 184px;
+}
+
 @media (max-width: 900px) {
   #contactImage{
     display: none;
@@ -640,9 +658,7 @@ textarea::placeholder {
   #emailInput{
     width: 300px;
   }
-  #phoneTwo{
-    display: none;
-  }
+
   #newPhone{
     margin-top: 30px;
   }
