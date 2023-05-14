@@ -24,6 +24,7 @@ body{
 .companyLogo{
   height: 22px;
   margin-left: 16%;
+  cursor: pointer;
 }
 
 .links{
