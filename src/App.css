@@ -7,7 +7,7 @@ body{
 
  @media (max-width: 948px) {
   body {
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     width: 100%;
   }
 } 
@@ -22,7 +22,6 @@ body{
 }
 
 .companyLogo{
-  /* position: fixed; */
   height: 22px;
   margin-left: 16%;
 }
@@ -72,6 +71,7 @@ body{
 
 .Home{
   position: relative;
+    overflow-x: hidden !important;
 }
 
 .openingSection.one {
@@ -185,11 +185,11 @@ body{
   font-size: x-small;
 }
 
-.firstList{
-  font-weight: 700;
-  padding: 0;
-  margin: 15px;
-}
+  .firstList{
+    font-weight: 700;
+    padding: 0;
+    margin: 15px;
+  }
 
 .screenImage {
   max-width: 94%; 
@@ -333,7 +333,6 @@ min-width: 270px;
     transform: translate(-50%);
     min-width: 270px;
   }
-
 }
 
 .fourthRow{
@@ -383,7 +382,7 @@ min-width: 270px;
   }
 }
 
-@media (max-width: 400px) {
+ @media (max-width: 400px) {
   .fourthText >h1 {
     white-space: normal;
     min-width: 300px;
@@ -394,7 +393,7 @@ min-width: 270px;
   .fourthTextBulk {
     min-width: 300px;
   }
-}
+} 
 
 @media (max-width: 330px) {
   .fourthText >h1 {
