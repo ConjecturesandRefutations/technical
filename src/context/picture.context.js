@@ -3,7 +3,7 @@ import { createContext, useState } from 'react';
 const PictureContext = createContext();
  
 function PictureProviderWrapper(props) {
-  const [picture, setPicture] = useState('light'); 
+  const [picture, setPicture] = useState('one'); 
  
   const togglePicture = () => {    
     if (picture === 'one') {
