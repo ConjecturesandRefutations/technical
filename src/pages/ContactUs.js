@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 
 import ContactImage from './../images/Img_Contact.png'
 
@@ -66,7 +67,7 @@ function ContactUs() {
 
               <div className='submitButton'>
                   <FontAwesomeIcon className="fa" icon={faPaperPlane} />
-                  <input type="submit" name="submit" id="submit" class="submit-button" value="Submit"/>
+                  <input type="submit" name="submit" id="submit" value="Submit"/>
               </div>
 
               { showAddress ?
@@ -88,28 +89,28 @@ function ContactUs() {
             </div>
 
             
-            <section className='formSecondRow'>
+            <article className='formSecondRow'>
               
               <div>
                 <p>City/Town</p>
-                <input id='cityInput' style={{width:75, marginRight:13}}/>
+                <input id='cityInput' className='addressInputs'/>
               </div>
                 <div>
                   <p>State/County</p>
-                  <input id='countyInput' style={{width:75, marginRight:13}}/>
+                  <input id='countyInput' className='addressInputs'/>
               </div>
 
               <div>
                 <p>Postcode</p>
-                <input id='postcode' style={{width:75, marginRight:13}}/>
+                <input id='postcode' className='addressInputs'/>
               </div>
 
                 <div>
                   <p>Country</p>
-                  <input id='country' style={{width:75, marginRight:13}}/>
+                  <input id='country' className='addressInputs'/>
               </div>
 
-            </section>
+            </article>
 
 
             </section>

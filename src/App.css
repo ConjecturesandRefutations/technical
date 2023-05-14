@@ -495,6 +495,8 @@ min-width: 270px;
   display: flex;
   flex-direction: row;
   position: relative;
+  overflow-x: hidden !important;
+  overflow-y: hidden;
 }
 
 .contactText {
@@ -618,6 +620,10 @@ textarea::placeholder {
   max-width: 369px;
 }
 
+.addressInputs{
+  width: 75px;
+  margin-right: 13px;
+}
 
 @media screen and (max-width: 450px) {
   .formSecondRow {
@@ -667,7 +673,7 @@ textarea::placeholder {
     max-width: 300px;
   }
   #submit{
-      max-width: 300px;
+      max-width: 280px;
   }
   .formFirstRow{
     display: flex;
@@ -700,21 +706,44 @@ textarea::placeholder {
 }
 
 
-@media (max-width: 300px) {
-
+ @media (max-width: 340px) {
   .contactText{
-    max-width: 230px;
-  }
-  .inputStyle{
-    width: 230px;
-  }
-  #nameInput{
-    width: 230px;
-  }
-  #emailInput{
-    width: 230px;
+    max-width: 250px;
   }
   #submit{
-    width: 230px;
+    width: 300px;
+  }
+  #newPhone{
+    width: 300px;
+  }
+  .formSecondRow{
+    width: 300px;
+  }
+} 
+
+@media (max-width: 330px) {
+  .contactText{
+    max-width: 250px;
+  }
+  .inputStyle{
+    width: 250px;
+  }
+  #nameInput{
+    width: 250px;
+  }
+  #emailInput{
+    width: 250px;
+  }
+  #submit{
+    width: 235px;
+  }
+  #newPhone{
+    width: 255px;
+  }
+  #addressInput{
+    width: 255px;
+  }
+  #addressTwoInput{
+    width: 255px;
   }
 }
