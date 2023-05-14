@@ -541,10 +541,20 @@ min-width: 270px;
   margin-right: 15px;
 }
 
-input {
+input, textarea {
   background-color: #e0e0ff; 
   opacity: 0.4;  
   height: 30px;
+  border-radius: 3px;
+}
+
+textarea{
+  height: 150px;
+}
+
+#checkbox{
+  display: flex;
+  align-items: center;
 }
 
 input::placeholder {
@@ -553,8 +563,39 @@ input::placeholder {
   text-align: center;
 }
 
+textarea::placeholder {
+  color: darkblue; 
+  font-weight:800;
+  text-align: center;
+}
+
 .inputStyle{
   width: 362px;
+}
+
+#submit{
+  all: initial;
+  background: #0678c9;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-size: x-small;
+  font-weight: bold;
+  width: 350px;
+  text-align: center;
+}
+
+.submitButton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
 }
 
 @media (max-width: 900px) {
@@ -586,6 +627,9 @@ input::placeholder {
 
   .inputStyle{
     max-width: 300px;
+  }
+  #submit{
+      max-width: 300px;
   }
   .formFirstRow{
     display: flex;
@@ -628,6 +672,9 @@ input::placeholder {
     width: 230px;
   }
   #emailInput{
+    width: 230px;
+  }
+  #submit{
     width: 230px;
   }
 }

@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+
 import ContactImage from './../images/Img_Contact.png'
 
 function ContactUs() {
@@ -40,6 +43,20 @@ function ContactUs() {
               </div>
 
               <input id='newPhone' placeholder='Add new phone number' className='inputStyle'/>
+
+              <div>
+                <p>Message</p>
+                <textarea className='inputStyle' placeholder='Maximum Text Length is 500 characters'/>
+              </div>
+
+              <div id='checkbox'>
+                <input type='checkbox'/>
+                <label>Add address details</label>
+              </div>
+
+              <div>
+                  <input type="submit" name="submit" id="submit" class="submit-button" value="Submit"/>
+              </div>
 
           </form>
 
