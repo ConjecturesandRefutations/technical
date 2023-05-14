@@ -14,13 +14,9 @@ function ContactUs() {
     setSecondPhone(!secondPhone); 
   }
 
-  const toggleShowAddress = (e) => {
-    setShowAddress(!showAddress); 
-  }
-
     return (
 
-      <div className='ContactUs'>   
+      <section className='ContactUs'>   
           <hr id='secondHr'/>
         <div className="contactText">
           <h1>Contact Us</h1>
@@ -43,7 +39,7 @@ function ContactUs() {
   
             </div>
 
-            <div>
+              <div>
                 <p>Phone number 01 - <span style={{fontStyle:'italic'}}>optional</span></p>
                 <input className='inputStyle'/>
               </div>
@@ -75,7 +71,7 @@ function ContactUs() {
 
               { showAddress ?
 
-              <>
+              <section>
 
               <div className='formFirstRow'>
                 
@@ -86,21 +82,23 @@ function ContactUs() {
 
                 <div>
                   <p>Address line 2</p>
-                  <input id='adressTwoInput'/>
+                  <input id='addressTwoInput'/>
               </div>
   
             </div>
 
-            <div className='formSecondRow'>
+            
+            <section className='formSecondRow'>
+              
               <div>
                 <p>City/Town</p>
                 <input id='cityInput' style={{width:75, marginRight:13}}/>
               </div>
-
                 <div>
                   <p>State/County</p>
                   <input id='countyInput' style={{width:75, marginRight:13}}/>
               </div>
+
               <div>
                 <p>Postcode</p>
                 <input id='postcode' style={{width:75, marginRight:13}}/>
@@ -110,10 +108,11 @@ function ContactUs() {
                   <p>Country</p>
                   <input id='country' style={{width:75, marginRight:13}}/>
               </div>
-  
-            </div>
 
-            </>
+            </section>
+
+
+            </section>
 
             : null}
                             
@@ -123,7 +122,7 @@ function ContactUs() {
         <img src={ContactImage} alt='stylised infinity symbol rotated ninety degrees' id='contactImage'/>
           
       
-      </div>
+      </section>
     );
   }
   

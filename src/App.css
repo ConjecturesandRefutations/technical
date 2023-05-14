@@ -611,6 +611,24 @@ textarea::placeholder {
   max-width: 369px;
 }
 
+.formSecondRow {
+  max-width: 369px;
+}
+
+
+@media screen and (max-width: 450px) {
+  .formSecondRow {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around;
+  }
+  .formSecondRow >div {
+    width: 200px;
+    margin-right: -60px;
+  }
+}
+
+
 #country {
   max-width: 184px;
 }
@@ -661,6 +679,9 @@ textarea::placeholder {
 
   #newPhone{
     margin-top: 30px;
+  }
+  #addressInput, #addressTwoInput{
+    width: 300px;
   }
 }
 
