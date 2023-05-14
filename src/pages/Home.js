@@ -56,7 +56,7 @@ function Home() {
                             <li>Turpis massa tincidunt dui ut ornare lectus.</li>
                           </ul>
 
-                          <Link id="learnMore" to="/about" >
+                          <Link id="learnMore" to="/aboutus" >
                               <a >Learn More</a>
                             </Link>
 
