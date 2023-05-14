@@ -82,7 +82,7 @@ hr {
     overflow-x: hidden !important;
 }
 
-.openingSection.one {
+.openingSection {
   background-image: url(./images/blueglasseshat.jpg);
   min-height: 390px;
   background-size: cover;
@@ -193,11 +193,11 @@ hr {
   font-size: x-small;
 }
 
-  .firstList{
-    font-weight: 700;
-    padding: 0;
-    margin: 15px;
-  }
+.firstList{
+  font-weight: 700;
+  padding: 0;
+  margin: 15px;
+}
 
 .screenImage {
   max-width: 94%; 
@@ -428,7 +428,7 @@ min-width: 270px;
 
 .Footer > p {
   float: right;
-  margin-right: 100px;
+  margin-right: 200px;
   font-size: small;
 }
 
@@ -486,5 +486,81 @@ min-width: 270px;
 @media (max-width: 930px) {
   .aboutText{
     min-width: 85%;
+  }
+}
+
+/* CSS for ContactUs Page */
+
+.ContactUs {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.contactText {
+  position: relative;
+  left: 16%;
+  max-width: 475px;
+  top: 50px;
+  margin-right: 20px;
+}
+
+.contactText > h1{
+  font-size: larger;
+}
+
+.contactText > p{
+  font-size: x-small;
+}
+
+#contactImage {
+  position: relative;
+  margin-left: 200px;
+}
+
+#secondHr{
+  position: absolute;
+  background-color: #cacaca;
+  border: 0 none;
+  color: #eee;
+  height: 1px;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  #contactImage{
+    display: none;
+  }
+  .contactText{
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .contactText{
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 490px) {
+
+  .contactText{
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .contactText{
+    max-width: 250px;
+  }
+}
+
+
+@media (max-width: 300px) {
+
+  .contactText{
+    max-width: 200px;
   }
 }
