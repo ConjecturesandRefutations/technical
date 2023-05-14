@@ -28,7 +28,7 @@ body{
 }
 
 .links{
-   position: absolute; 
+  position: absolute; 
   right: 15%;
   font-weight: bold;
   font-size: x-small;
@@ -47,7 +47,7 @@ body{
   padding-left: 20px;
   padding-right: 20px;
   background: #e9f5ff;
-  border-radius: 4px;
+  border-radius: 3px;
   padding: 8px 16px;
 }
 
@@ -74,13 +74,22 @@ body{
   position: relative;
 }
 
-.openingSection {
+.openingSection.one {
   background-image: url(./images/blueglasseshat.jpg);
   min-height: 390px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center 25%;
   position: relative;
+}
+
+.openingSection {
+  min-height: 390px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 25%;
+  position: relative;
+  font-weight: 700;
 }
 
 
@@ -93,6 +102,27 @@ body{
   z-index: 9999;
 }
 
+.arrowLeft{
+  all: initial;
+  position: absolute;
+  z-index: 9999;
+  color: white;
+  left: 0;
+  top: 50%;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.arrowRight{
+  all: initial;
+  position: absolute;
+  z-index: 9999;
+  color: white;
+  right: 0;
+  top: 50%;
+  margin: 0 auto;
+  cursor: pointer;
+}
 
  .openingSection::before {
   content: "";
@@ -106,7 +136,7 @@ body{
   mix-blend-mode: multiply;
 }
  
-@media (max-width: 675px) {
+@media (max-width: 720px) {
   .openingText{
     left: 40%;
     transform: translate(-50%, -50%);
@@ -162,7 +192,7 @@ body{
 }
 
 .screenImage {
-  max-width: 100%; 
+  max-width: 94%; 
   max-height: 280px;
   margin-right: 16%;
   border-radius: 3px;
@@ -179,6 +209,36 @@ body{
     text-decoration: none;
     font-size: x-small;
     font-weight: bold;
+}
+
+#loginCenter{
+  background: white;
+  border-radius: 4px;
+  color: blue;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 8%;
+  text-decoration: none;
+  font-size: x-small;
+  font-weight: bold;
+}
+
+.bottomContact{
+  display: inline-block;
+  position: relative;
+  left: 49%;
+  transform: translate(-55%);
+  margin-top: 20px;
+  background: #0890f1;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-size: x-small;
+  font-weight: bold;
 }
 
 @media (max-width: 1087px) {
@@ -218,6 +278,18 @@ body{
   }
   .centralContact{
     width: 90%;
+  }
+   .bottomContact{
+    width: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  } 
+  #loginCenter{
+    width: 250px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -348,15 +420,15 @@ min-width: 270px;
 }
 
 .Footer > p {
-float: right;
-margin-right: 100px;
-font-size: small;
+  float: right;
+  margin-right: 100px;
+  font-size: small;
 }
 
 @media (max-width: 500px) {
   .Footer > p {
-    float: none;
-    margin-right: 0;
+   float: none;
+   margin-right: 0;
    display: flex;
    justify-content: center;
   }

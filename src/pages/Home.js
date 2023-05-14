@@ -1,16 +1,33 @@
+import { useState, useContext, useEffect } from 'react'; 
 import { Link } from "react-router-dom"
 
+
+import { PictureContext } from './../context/picture.context'; 
+
+import BlueGlasses from './../images/blueglasseshat.jpg'
+import OrangeChairs from './../images/orangechairs.jpg'
 import Screen from './../images/orangechairsscreen.jpg'
 
 function Home() {
 
+  const { picture, togglePicture } = useContext(PictureContext);
+  const [backgroundImage, setBackgroundImage] = useState(BlueGlasses);
+
+  useEffect(() => {
+    if (picture === 'one') {
+      setBackgroundImage(BlueGlasses);
+    } else if (picture === 'two') {
+      setBackgroundImage(OrangeChairs);
+    }
+  }, [picture]);
 
     return (
-      <nav className='Home'>
+      <nav className='Home' >
   
-          <section className="openingSection">
+          <section className="openingSection" style={{ backgroundImage: `url(${backgroundImage})`}}>
 
             <div className="openingText">
+
               <h1 id="mainHeading">Lorem ipsum dolor</h1>
               <p>Quem vide tincidunct pri ei, id mea ominum denique</p> 
 
@@ -20,8 +37,13 @@ function Home() {
 
             </div> 
 
-          </section>
+            <div className='arrows'>
+                <button className='arrowLeft' onClick={togglePicture}>⬅️</button>
+                <button className='arrowRight' onClick={togglePicture}>➡️</button>
+            </div>
 
+
+          </section>
 
           <section className="secondRow" >
  
@@ -57,6 +79,9 @@ function Home() {
               <h1>Nulla sem urna, dictum sed nisi in, viverra rutrum neque</h1>
 
               <p>Massa massa ultricies mi quis hendrerit dolor magna eget. Ligula ullamcorper malesuada proin libero nunc consequat interdum varius. Ut porttitor leo a diam sollicitudin. Venenatis cras sed felis eget velit aliquet sagittis id consectetur. Cursus in hac habitasse platea.</p>
+              <Link id="loginCenter" to="#" >
+                              <a >Log in</a>
+                            </Link>
             </div>
 
 
@@ -72,6 +97,10 @@ function Home() {
 Elit scelerisque mauris pellentesque pulvinar pellentesque habitant. Aliquam sem et tortor consequat id porta nibh venenatis. Parturient montes nascetur ridiculus mus. Dictum non consectetur a erat nam at. Amet volutpat consequat mauris nunc congue nisi vitae suscipit. Vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt. Ut tellus elementum sagittis vitae et leo duis ut diam. Libero volutpat sed cras ornare arcu dui vivamus. Pulvinar pellentesque habitant morbi tristique senectus et netus et. Urna condimentum mattis pellentesque id nibh tortor id aliquet lectus. Sed turpis tincidunt id aliquet risus feugiat in. <br/><br/> Integer enim neque volutpat ac tincidunt vitae. Morbi quis commodo odio aenean sed.
 Eget duis at tellus at. Pharetra vel turpis nunc eget lorem. Eu scelerisque felis imperdiet proin fermentum leo vel orci porta. Integer quis auctor elit sed vulputate mi sit amet. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est sit amet facilisis magna etiam tempor orci eu. Augue eget arcu dictum varius duis at consectetur lorem donec. Odio pellentesque diam volutpat commodo sed egestas. Amet porttitor eget dolor morbi non arcu risus. Lectus nulla at volutpat diam ut venenatis tellus in. Maecenas ultricies mi eget mauris pharetra et ultrices neque ornare. Tempor orci dapibus ultrices in iaculis nunc. 
 Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit amet.</p>
+
+              <Link className="bottomContact" to="/contact-us" >
+                <a>Contact us</a>
+              </Link>
 
           </section> 
 

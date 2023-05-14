@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+
 import company from './../images/company.png'
 
 function Navbar() {
