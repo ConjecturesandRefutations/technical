@@ -513,6 +513,11 @@ min-width: 270px;
   font-size: x-small;
 }
 
+.contactText > form{
+  margin-top: 25px;
+  font-size: small;
+}
+
 #contactImage {
   position: relative;
   margin-left: 200px;
@@ -527,19 +532,46 @@ min-width: 270px;
   width: 100%;
 }
 
+.formFirstRow{
+  display: flex;
+  flex-direction: row;
+}
+
+#nameInput{
+  margin-right: 15px;
+}
+
+input {
+  background-color: #e0e0ff; 
+  opacity: 0.4;  
+  height: 30px;
+}
+
+input::placeholder {
+  color: darkblue; 
+  font-weight:800;
+  text-align: center;
+}
+
+.inputStyle{
+  width: 362px;
+}
+
 @media (max-width: 900px) {
   #contactImage{
     display: none;
   }
   .contactText{
     margin-bottom: 50px;
+    max-width: 362px;
+    left: 25%;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
   .contactText{
-    max-width: 400px;
+    left: 16%;
   }
 }
 
@@ -550,10 +582,36 @@ min-width: 270px;
   }
 }
 
+@media (max-width: 450px) {
+
+  .inputStyle{
+    max-width: 300px;
+  }
+  .formFirstRow{
+    display: flex;
+    flex-direction: column;
+  }
+  #nameInput{
+    width: 300px;
+  }
+  #emailInput{
+    width: 300px;
+  }
+  #phoneTwo{
+    display: none;
+  }
+  #newPhone{
+    margin-top: 30px;
+  }
+}
+
 @media (max-width: 400px) {
 
   .contactText{
-    max-width: 250px;
+    max-width: 300px;
+  }
+  .contactText{
+    left: 5%;
   }
 }
 
@@ -561,6 +619,15 @@ min-width: 270px;
 @media (max-width: 300px) {
 
   .contactText{
-    max-width: 200px;
+    max-width: 230px;
+  }
+  .inputStyle{
+    width: 230px;
+  }
+  #nameInput{
+    width: 230px;
+  }
+  #emailInput{
+    width: 230px;
   }
 }

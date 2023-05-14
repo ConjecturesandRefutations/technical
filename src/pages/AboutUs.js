@@ -1,7 +1,12 @@
+import { useEffect } from 'react'
+
 import Screen from './../images/orangechairsscreen.jpg'
 
 function AboutUs() {
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
     return (
       <div className='AboutUs'>
