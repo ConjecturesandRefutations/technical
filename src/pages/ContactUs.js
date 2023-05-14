@@ -54,7 +54,8 @@ function ContactUs() {
                 <label>Add address details</label>
               </div>
 
-              <div>
+              <div className='submitButton'>
+                  <FontAwesomeIcon className="fa" icon={faPaperPlane} />
                   <input type="submit" name="submit" id="submit" class="submit-button" value="Submit"/>
               </div>
 

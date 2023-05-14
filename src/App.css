@@ -589,13 +589,12 @@ textarea::placeholder {
   text-align: center;
 }
 
-.submitButton{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.5rem;
-  font-size: 1rem;
+
+.fa{
+  position: absolute;
+  left: 13px;
+  margin-top: 7px;
+  color: white;
 }
 
 @media (max-width: 900px) {
