@@ -222,7 +222,7 @@ hr {
 #loginCenter{
   background: white;
   border-radius: 4px;
-  color: blue;
+  color: rgb(95, 109, 189);
   cursor: pointer;
   display: inline-block;
   font-size: 14px;
@@ -601,8 +601,11 @@ textarea::placeholder {
   height: 30px;
   width: 369px;
   margin-top: 20px;
+  background-color: #e0e0ff;
   color: blue;
   font-weight: bold;
+  border: none;
+  cursor: pointer;
 }
 
 .formSecondRow{
@@ -679,6 +682,7 @@ textarea::placeholder {
 
   #newPhone{
     margin-top: 30px;
+    width: 300px;
   }
   #addressInput, #addressTwoInput{
     width: 300px;

@@ -51,7 +51,7 @@ function ContactUs() {
               </div>
               }
 
-              <button id='newPhone' className='inputStyle' onClick={toggleSecondPhone}>{ !secondPhone ? 'Add new phone' : 'Remove phone' }</button>
+              <button id='newPhone' className='inputStyle' onClick={toggleSecondPhone}>{ !secondPhone ? 'Add new phone number' : 'Remove phone number' }</button>
 
               <div>
                 <p>Message</p>
@@ -60,7 +60,7 @@ function ContactUs() {
 
               <div id='checkbox'>
                 <input type='checkbox' checked={showAddress}
-                   onChange={(event) => setShowAddress(event.target.checked)}/>
+                   onChange={(event) => setShowAddress(event.target.checked)} style={{cursor: 'pointer'}}/>
                 <label>Add address details</label>
               </div>
 
