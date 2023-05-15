@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import ClipLoader from "react-spinners/ClipLoader";
@@ -6,6 +7,8 @@ import ClipLoader from "react-spinners/ClipLoader";
 import ContactImage from './../images/Img_Contact.png'
 
 function ContactUs() {
+
+  const formEndpoint = '/.netlify/functions/contactUs';
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -37,10 +40,8 @@ const handleSubmit = (e) => {
 
   setLoading(true);
 
-  fetch('/api/v1/contact-us/submit',  {
-  method: 'POST',
-  body: JSON.stringify(contact)
-  }).then(() => {
+  axios.post(formEndpoint, contact)
+  .then(() => {
     console.log('message sent')
     setName("");
     setEmail("");
@@ -56,6 +57,9 @@ const handleSubmit = (e) => {
 
     setLoading(false);
   })
+  .catch((error) => {
+    console.error('Failed to send message:', error);
+  });
 }
 
     return (
