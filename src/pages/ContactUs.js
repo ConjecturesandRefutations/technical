@@ -1,14 +1,11 @@
 import { useState } from 'react';
-import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faPaperPlane, faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import ClipLoader from "react-spinners/ClipLoader";
 
 import ContactImage from './../images/Img_Contact.png'
 
 function ContactUs() {
-
-  const formEndpoint = '/../../functions/contactUs';
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -21,6 +18,8 @@ function ContactUs() {
   const [county, setCounty] = useState("");
   const [postcode, setPostcode] = useState("");
   const [country, setCountry] = useState("");
+
+  const [submitted, setSubmitted] = useState(false);
 
   const [loading, setLoading] = useState(false);
 
@@ -40,8 +39,10 @@ const handleSubmit = (e) => {
 
   setLoading(true);
 
-  axios.post(formEndpoint, contact)
-  .then(() => {
+  fetch('api/v1/contact-us/submit',  {
+  method: 'POST',
+  body: JSON.stringify(contact)
+  }).then(() => {
     console.log('message sent')
     setName("");
     setEmail("");
@@ -56,10 +57,9 @@ const handleSubmit = (e) => {
     setCountry("");
 
     setLoading(false);
+
+    setSubmitted(true);
   })
-  .catch((error) => {
-    console.error('Failed to send message:', error);
-  });
 }
 
     return (
@@ -72,6 +72,8 @@ const handleSubmit = (e) => {
           <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
           Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt.
           </p>
+
+          {!submitted &&
 
           <form className='contactForm' onSubmit={handleSubmit}>
 
@@ -182,6 +184,23 @@ const handleSubmit = (e) => {
             : null}
                             
           </form>
+
+              }
+
+
+          {submitted &&
+          
+          <div className='submitted'>
+
+              <FontAwesomeIcon className="faCircle" icon={faCircleCheck}/> 
+          
+              <h3>Your Message Has been sent</h3>
+
+              <p>We will be in contact with you within 24 hours</p>
+
+          </div>
+          
+          }
 
         </div>
         <img src={ContactImage} alt='stylised infinity symbol rotated ninety degrees' id='contactImage'/>

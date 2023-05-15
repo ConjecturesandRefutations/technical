@@ -648,9 +648,34 @@ textarea::placeholder {
   }
 }
 
-
 #country {
   max-width: 184px;
+}
+
+.submitted{
+padding: 5px, 20px;
+background-color: #e0e0ff;
+border-radius: 4px;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 30px;
+}
+
+.submitted > h3{
+  font-size: medium;
+  margin-bottom: 0;
+}
+
+.submitted > p{
+  font-size: small;
+  margin-top: 5px;
+}
+
+.faCircle{
+  height: 40px;
+  margin-top: 20px;
+  color: rgb(30, 192, 30);
 }
 
 @media (max-width: 900px) {
