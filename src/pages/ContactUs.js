@@ -8,7 +8,7 @@ import ContactImage from './../images/Img_Contact.png'
 
 function ContactUs() {
 
-  const formEndpoint = '/.netlify/functions/contactUs';
+  const formEndpoint = '/../../functions/contactUs';
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
