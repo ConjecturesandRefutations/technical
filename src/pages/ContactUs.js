@@ -39,7 +39,7 @@ const handleSubmit = (e) => {
 
   setLoading(true);
 
-  fetch('api/v1/contact-us/submit',  {
+  fetch('https://interview-assessment.api.avamae.co.uk/api/v1/contact-us/submit',  {
   method: 'POST',
   body: JSON.stringify(contact)
   }).then(() => {

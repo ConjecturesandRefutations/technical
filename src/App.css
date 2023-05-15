@@ -83,7 +83,7 @@ hr {
 }
 
 .openingSection {
-  background-image: url(./images/blueglasseshat.jpg);
+  /* background-image: url(./images/blueglasseshat.jpg); */
   min-height: 390px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -733,7 +733,6 @@ margin-top: 30px;
 }
 
 @media (max-width: 400px) {
-
   .contactText{
     max-width: 280px;
     left: 50%;
@@ -762,6 +761,9 @@ margin-top: 30px;
   }
   #addressTwoInput{
     width: 255px;
+  }
+  .submitted >p{
+margin-left: 15px;
   }
 }
 

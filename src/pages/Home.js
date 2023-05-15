@@ -1,7 +1,8 @@
-import { useState } from 'react'; 
+import { useState, useEffect } from 'react'; 
 import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 
 import BlueGlasses from './../images/blueglasseshat.jpg'
 import OrangeChairs from './../images/orangechairs.jpg'
@@ -10,6 +11,7 @@ import Screen from './../images/orangechairsscreen.jpg'
 function Home() {
 
   const [backgroundImage, setBackgroundImage] = useState(BlueGlasses);
+  const [carouselData, setCarouselData] = useState([]);
 
   const togglePicture = () => {    
     if (backgroundImage === BlueGlasses) {
@@ -18,6 +20,19 @@ function Home() {
       setBackgroundImage(BlueGlasses);
     }
   };
+
+  useEffect(() => {
+    const fetchCarouselData = async () => {
+      try {
+        const response = await axios.get('https://interview-assessment.api.avamae.co.uk/api/v1/home/banner-details');
+        setCarouselData(response.data);
+      } catch (error) {
+        console.error('Error fetching carousel images:', error);
+      }
+    };
+  
+    fetchCarouselData();
+  }, []);
 
     return (
       <div className='Home' >
@@ -107,4 +122,3 @@ Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit amet.</p>
   }
   
   export default Home;
-  
