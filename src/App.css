@@ -142,13 +142,6 @@ hr {
   background: linear-gradient(to right, rgba(0, 0, 0, 10), rgba(0, 0, 0, 0));
   z-index: 1;
 }
- 
-@media (max-width: 720px) {
-  .openingText{
-    left: 40%;
-    transform: translate(-50%, -50%);
-  }
-} 
 
 @media (max-width: 345px) {
   .openingText{
@@ -689,14 +682,6 @@ margin-top: 30px;
   }
 }
 
-/* @media (max-width: 490px) {
-
-  .contactText{
-    left: 50%;
-    transform: translate(-50%);
-  }
-}
- */
 @media (max-width: 450px) {
 
   .inputStyle{
