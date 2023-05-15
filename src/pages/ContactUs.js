@@ -27,6 +27,8 @@ function ContactUs() {
 
   const [secondPhone, setSecondPhone] = useState(false);
 
+  const [error, setError] =  useState('')
+
   const toggleSecondPhone = (e) => {
     e.preventDefault(); 
     setSecondPhone(!secondPhone); 
@@ -35,12 +37,32 @@ function ContactUs() {
 
 const handleSubmit = (e) => {
   e.preventDefault();
-  const contact = { email, name, phoneOne, phoneTwo, message, addressOne, addressTwo, city, county, postcode, country };
+
+  if (!name || !email || !message) {
+    setError('Please fill in all required fields.');
+    return; 
+  }
+
+  const contact = {   FullName: name,
+    EmailAddress: email,
+    PhoneNumbers: [phoneOne, phoneTwo].filter(Boolean), 
+    Message: message,
+    bIncludeAddressDetails: showAddress,
+    AddressDetails: {
+      AddressLine1: addressOne,
+      AddressLine2: addressTwo,
+      CityTown: city,
+      StateCounty: county,
+      Postcode: postcode,
+      Country: country} };
 
   setLoading(true);
-
+console.log(contact);
   fetch('https://interview-assessment.api.avamae.co.uk/api/v1/contact-us/submit',  {
   method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
   body: JSON.stringify(contact)
   }).then(() => {
     console.log('message sent')
@@ -60,6 +82,10 @@ const handleSubmit = (e) => {
 
     setSubmitted(true);
   })
+  .catch((error) => {
+    console.error('Error sending the message:', error);
+    setLoading(false);
+  });
 }
 
     return (
@@ -76,6 +102,8 @@ const handleSubmit = (e) => {
           {!submitted &&
 
           <form className='contactForm' onSubmit={handleSubmit}>
+
+            <span style={{color:'red', fontWeight:'bold'}}>{error}</span>
 
             <div className='formFirstRow'>
               <div>
@@ -130,9 +158,7 @@ const handleSubmit = (e) => {
               </div> 
 
               } 
-              
-              {/* The above code ensures that when the form is being sent, the button says 'Sending!' rather than 'submit', and is disabled */}
-              
+                            
               {loading ? <ClipLoader color="#36d7b7" className="clipLoader"/> : null}
 
 

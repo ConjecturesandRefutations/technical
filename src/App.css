@@ -12,7 +12,7 @@ body{
   }
 } 
 
-/* CSS for Navbar */
+/* NAVBAR */
 
 .Navbar{
   height: 60px;
@@ -75,7 +75,7 @@ hr {
 }
 
 
-/* CSS for Home */
+/* HOME */
 
 .Home{
   position: relative;
@@ -413,29 +413,7 @@ min-width: 270px;
   }
 }
 
-/* CSS for footer */
-
-
-.Footer{
-  color: grey;
-}
-
-.Footer > p {
-  float: right;
-  margin-right: 200px;
-  font-size: small;
-}
-
-@media (max-width: 500px) {
-  .Footer > p {
-   float: none;
-   margin-right: 0;
-   display: flex;
-   justify-content: center;
-  }
-}
-
-/* CSS for AboutUs Page */
+/* ABOUT US */
 
 .AboutUs{
     overflow-x: hidden !important;
@@ -483,7 +461,7 @@ min-width: 270px;
   }
 }
 
-/* CSS for ContactUs Page */
+/* CONTACT US */
 
 .ContactUs {
   display: flex;
@@ -770,5 +748,27 @@ margin-left: 15px;
   }
   #addressTwoInput{
     width: 255px;
+  }
+}
+
+/* FOOTER */
+
+
+.Footer{
+  color: grey;
+}
+
+.Footer > p {
+  float: right;
+  margin-right: 200px;
+  font-size: small;
+}
+
+@media (max-width: 500px) {
+  .Footer > p {
+   float: none;
+   margin-right: 0;
+   display: flex;
+   justify-content: center;
   }
 }
