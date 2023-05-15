@@ -15,7 +15,7 @@ body{
 /* CSS for Navbar */
 
 .Navbar{
-  height: 54px;
+  height: 60px;
   display: flex;
   align-items: center;
   margin-bottom: 0;
@@ -83,16 +83,7 @@ hr {
 }
 
 .openingSection {
-  /* background-image: url(./images/blueglasseshat.jpg); */
-  min-height: 390px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center 25%;
-  position: relative;
-}
-
-.openingSection {
-  min-height: 390px;
+  min-height: 445px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center 25%;
@@ -103,11 +94,12 @@ hr {
 
 .openingText {
   position: absolute;
-  top: 40%;
-  left: 30%;
-  transform: translate(-50%, -50%);
+  top: 25%;
+  left: 10%;
   color: white;
   z-index: 9999;
+  display: flex;
+  flex-direction: column;
 }
 
 .arrowLeft{
@@ -149,7 +141,6 @@ hr {
   width: 50%;
   background: linear-gradient(to right, rgba(0, 0, 0, 10), rgba(0, 0, 0, 0));
   z-index: 1;
-  mix-blend-mode: multiply;
 }
  
 @media (max-width: 720px) {
@@ -166,16 +157,18 @@ hr {
 }
 
 .centralContact{
-  background: #0890f1;
+  background: #0780d6;
   border-radius: 4px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
   font-size: 14px;
-  padding: 8px 12px;
+  padding: 10px 12px;
   text-decoration: none;
   font-size: x-small;
   font-weight: bold;
+  width: 100px;
+  text-align: center;
 }
 
 .secondRow{
@@ -292,9 +285,6 @@ hr {
     align-items: center;
     justify-content: center;
   }
-  .centralContact{
-    width: 90%;
-  }
    .bottomContact{
     width: 50%;
     display: inline-flex;
@@ -348,6 +338,9 @@ min-width: 270px;
     margin-left: 50%;
     transform: translate(-50%);
     min-width: 270px;
+  }
+  .centralContact{
+    width: 70%;
   }
 }
 

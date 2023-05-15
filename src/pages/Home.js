@@ -2,47 +2,51 @@ import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons';
+import ClipLoader from "react-spinners/ClipLoader";
 import axios from 'axios';
 
-import BlueGlasses from './../images/blueglasseshat.jpg'
-import OrangeChairs from './../images/orangechairs.jpg'
 import Screen from './../images/orangechairsscreen.jpg'
 
 function Home() {
 
-  const [backgroundImage, setBackgroundImage] = useState(BlueGlasses);
-  const [carouselData, setCarouselData] = useState([]);
+  const [bannerDetails, setBannerDetails] = useState([]);
+  const [bannerIndex, setBannerIndex] = useState(0);
 
-  const togglePicture = () => {    
-    if (backgroundImage === BlueGlasses) {
-      setBackgroundImage(OrangeChairs);
-    } else {
-      setBackgroundImage(BlueGlasses);
-    }
-  };
+  const [loading, setLoading] = useState(false);
+
 
   useEffect(() => {
-    const fetchCarouselData = async () => {
-      try {
-        const response = await axios.get('https://interview-assessment.api.avamae.co.uk/api/v1/home/banner-details');
-        setCarouselData(response.data);
-      } catch (error) {
-        console.error('Error fetching carousel images:', error);
-      }
-    };
-  
-    fetchCarouselData();
+    setLoading(true);
+    axios.get('https://interview-assessment.api.avamae.co.uk/api/v1/home/banner-details')
+      .then(response => {
+        const { Details } = response.data;
+        setBannerDetails(Details);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error('Error fetching banner details:', error);
+      });
   }, []);
+
+  const toggleLeft = () => {
+    setBannerIndex(prevIndex => (prevIndex - 1 + bannerDetails.length) % bannerDetails.length);
+  };
+  
+  const toggleRight = () => {
+    setBannerIndex(prevIndex => (prevIndex + 1) % bannerDetails.length);
+  };
 
     return (
       <div className='Home' >
   
-          <section className="openingSection" style={{ backgroundImage: `url(${backgroundImage})`}}>
+          <section className="openingSection" style={{ backgroundImage: `url(${bannerDetails[bannerIndex]?.ImageUrl})`}}>
 
             <div className="openingText">
 
-              <h1 id="mainHeading">Lorem ipsum dolor</h1>
-              <p>Quem vide tincidunct pri ei, id mea ominum denique</p> 
+              <h1 id="mainHeading">{bannerDetails[bannerIndex]?.Title}</h1>
+
+              { loading && <ClipLoader color="#36d7b7" className="clipLoader"/> }
+              <p>{bannerDetails[bannerIndex]?.Subtitle}</p> 
 
               <Link className="centralContact" to="/contact-us" >
                 <a>Contact us</a>
@@ -50,9 +54,11 @@ function Home() {
 
             </div> 
 
+            
+
             <div className='arrows'>
-                <button className='arrowLeft' onClick={togglePicture}><FontAwesomeIcon icon={faCaretLeft} /></button>
-                <button className='arrowRight' onClick={togglePicture}><FontAwesomeIcon icon={faCaretRight} /></button>
+                <button className='arrowLeft' onClick={toggleLeft}><FontAwesomeIcon icon={faCaretLeft} /></button>
+                <button className='arrowRight' onClick={toggleRight}><FontAwesomeIcon icon={faCaretRight} /></button>
             </div>
 
 
