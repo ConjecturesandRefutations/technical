@@ -625,6 +625,7 @@ textarea::placeholder {
   display: flex;
   flex-direction: row;
   max-width: 369px;
+  margin-bottom: 50px;
 }
 
 .formSecondRow {
@@ -678,6 +679,11 @@ margin-top: 30px;
   color: rgb(30, 192, 30);
 }
 
+.addressContainer{
+  overflow-y: auto;
+  max-width: fit-content;
+}
+
 @media (max-width: 900px) {
   #contactImage{
     display: none;
@@ -685,46 +691,41 @@ margin-top: 30px;
   .contactText{
     margin-bottom: 50px;
     max-width: 362px;
-    left: 25%;
+    left: 50%;
+    transform: translate(-50%);
   }
 }
 
-@media (max-width: 700px) {
+/* @media (max-width: 490px) {
 
   .contactText{
-    left: 16%;
+    left: 50%;
+    transform: translate(-50%);
   }
 }
-
-@media (max-width: 490px) {
-
-  .contactText{
-    max-width: 300px;
-  }
-}
-
+ */
 @media (max-width: 450px) {
 
   .inputStyle{
-    max-width: 300px;
+    max-width: 350px;
   }
   #submit{
-      max-width: 280px;
+      max-width: 330px;
   }
   .formFirstRow{
     display: flex;
     flex-direction: column;
   }
   #nameInput{
-    width: 300px;
+    width: 350px;
   }
   #emailInput{
-    width: 300px;
+    width: 350px;
   }
 
   #newPhone{
     margin-top: 30px;
-    width: 300px;
+    width: 350px;
   }
   #addressInput, #addressTwoInput{
     width: 300px;
@@ -734,30 +735,38 @@ margin-top: 30px;
 @media (max-width: 400px) {
 
   .contactText{
-    max-width: 300px;
+    max-width: 280px;
+    left: 50%;
+    transform: translate(-50%);
   }
   .contactText{
-    left: 5%;
+    max-width: 280px;
+  }
+  .inputStyle{
+    width: 280px;
+  }
+  #nameInput{
+    width: 280px;
+  }
+  #emailInput{
+    width: 280px;
+  }
+  #submit{
+    width: 255px;
+  }
+  #newPhone{
+    width: 280px;
+  }
+  #addressInput{
+    width: 255px;
+  }
+  #addressTwoInput{
+    width: 255px;
   }
 }
 
 
- @media (max-width: 340px) {
-  .contactText{
-    max-width: 250px;
-  }
-  #submit{
-    width: 300px;
-  }
-  #newPhone{
-    width: 300px;
-  }
-  .formSecondRow{
-    width: 300px;
-  }
-} 
-
-@media (max-width: 330px) {
+@media (max-width: 340px) {
   .contactText{
     max-width: 250px;
   }
