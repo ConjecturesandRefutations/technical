@@ -1,5 +1,7 @@
 import { useState } from 'react'; 
 import { Link } from "react-router-dom"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 
 import BlueGlasses from './../images/blueglasseshat.jpg'
 import OrangeChairs from './../images/orangechairs.jpg'
@@ -34,8 +36,8 @@ function Home() {
             </div> 
 
             <div className='arrows'>
-                <button className='arrowLeft' onClick={togglePicture}>⬅️</button>
-                <button className='arrowRight' onClick={togglePicture}>➡️</button>
+                <button className='arrowLeft' onClick={togglePicture}><FontAwesomeIcon icon={faCaretLeft} /></button>
+                <button className='arrowRight' onClick={togglePicture}><FontAwesomeIcon icon={faCaretRight} /></button>
             </div>
 
 
