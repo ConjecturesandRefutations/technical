@@ -56,8 +56,8 @@ function Home() {
           
 
             <div className='arrows'>
-                <button className='arrowLeft' onClick={toggleLeft}><FontAwesomeIcon icon={faCaretLeft} /></button>
-                <button className='arrowRight' onClick={toggleRight}><FontAwesomeIcon icon={faCaretRight} /></button>
+                <button className='arrowLeft sharedArrow' onClick={toggleLeft}><FontAwesomeIcon icon={faCaretLeft} /></button>
+                <button className='arrowRight sharedArrow' onClick={toggleRight}><FontAwesomeIcon icon={faCaretRight} /></button>
             </div>
 
 

@@ -195,12 +195,12 @@ function ContactUs() {
                   
                     <div>
                       <p>Address line 1</p>
-                      <input type="text" name="addressOne" value={addressOne} onChange={(e) => setAddressOne(e.target.value)} id='addressInput' style={{marginRight:20}}/>
+                      <input type="text" name="addressOne" value={addressOne} onChange={(e) => setAddressOne(e.target.value)} className='sharedAddress' style={{marginRight:20}}/>
                     </div>
 
                       <div>
                         <p>Address line 2</p>
-                        <input type="text" name="addressTwo" value={addressTwo} onChange={(e) => setAddressTwo(e.target.value)} id='addressTwoInput'/>
+                        <input type="text" name="addressTwo" value={addressTwo} onChange={(e) => setAddressTwo(e.target.value)} className='sharedAddress'/>
                     </div>
     
                 </div>

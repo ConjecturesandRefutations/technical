@@ -102,35 +102,27 @@ hr {
   flex-direction: column;
 }
 
-.arrowLeft{
+.sharedArrow {
   all: initial;
   position: absolute;
   z-index: 9999;
   color: white;
+  top: 50%;
+  margin: 0 auto;
+  cursor: pointer;
+  background-color: rgba(136, 135, 135, 0.5);
+  border-radius: 3px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  }
+  
+  .arrowLeft {
   left: 0;
-  top: 50%;
-  margin: 0 auto;
-  cursor: pointer;
-  background-color: rgba(136, 135, 135, 0.5);
-  border-radius: 3px;
-  padding: 10px 15px;
-  box-sizing: border-box;
-}
-
-.arrowRight{
-  all: initial;
-  position: absolute;
-  z-index: 9999;
-  color: white;
+  }
+  
+  .arrowRight {
   right: 0;
-  top: 50%;
-  margin: 0 auto;
-  cursor: pointer;
-  background-color: rgba(136, 135, 135, 0.5);
-  border-radius: 3px;
-  padding: 10px 15px;
-  box-sizing: border-box;
-}
+  }
 
  .openingSection::before {
   content: "";
@@ -664,98 +656,75 @@ margin-top: 30px;
 }
 
 @media (max-width: 450px) {
-
-  .inputStyle{
+  .inputStyle {
     max-width: 350px;
   }
-  #submit{
-      max-width: 330px;
+  #submit {
+    max-width: 330px;
   }
-  .formFirstRow{
+  .formFirstRow {
     display: flex;
     flex-direction: column;
   }
-  #nameInput{
+  #nameInput,
+  #emailInput {
     width: 350px;
   }
-  #emailInput{
-    width: 350px;
-  }
-
-  #newPhone{
+  #newPhone {
     margin-top: 30px;
     width: 350px;
   }
-  #addressInput, #addressTwoInput{
-    width: 300px;
+  .sharedAddress{
+    width: 350px;
   }
 }
 
 @media (max-width: 400px) {
-  .contactText{
+  .contactText {
     max-width: 280px;
     left: 50%;
     transform: translate(-50%);
   }
-  .contactText{
-    max-width: 280px;
-  }
-  .inputStyle{
+  .inputStyle,
+  #nameInput,
+  #emailInput {
     width: 280px;
   }
-  #nameInput{
-    width: 280px;
-  }
-  #emailInput{
-    width: 280px;
-  }
-  #submit{
+  #submit {
     width: 255px;
   }
-  #newPhone{
+  #newPhone {
     width: 280px;
   }
-  #addressInput{
-    width: 255px;
+  .sharedAddress {
+    width: 280px;
   }
-  #addressTwoInput{
-    width: 255px;
-  }
-  .submitted >p{
-margin-left: 15px;
+  .submitted > p {
+    margin-left: 15px;
   }
 }
 
-
 @media (max-width: 340px) {
-  .contactText{
+  .contactText {
     max-width: 250px;
   }
-  .inputStyle{
+  .inputStyle,
+  #nameInput,
+  #emailInput {
     width: 250px;
   }
-  #nameInput{
-    width: 250px;
-  }
-  #emailInput{
-    width: 250px;
-  }
-  #submit{
+  #submit {
     width: 235px;
   }
-  #newPhone{
+  #newPhone {
     width: 255px;
   }
-  #addressInput{
-    width: 255px;
-  }
-  #addressTwoInput{
+  .sharedAddress {
     width: 255px;
   }
 }
 
 /* FOOTER */
-
 
 .Footer{
   color: grey;
