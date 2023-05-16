@@ -32,15 +32,17 @@ function ContactUs() {
   const [messageError, setMessageError] = useState('');
   const [postcodeError, setPostcodeError] = useState('');
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const toggleSecondPhone = (e) => {
     e.preventDefault(); 
     setSecondPhone(!secondPhone); 
   }
 
-
-const handleSubmit = (e) => {
-  e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
 /* Error Handling */
 
@@ -50,7 +52,7 @@ const handleSubmit = (e) => {
   } 
   
   if (phoneOne.length > 20 || phoneTwo.length > 20 ) {
-    setPhoneError('Invalid Phone Number');
+    setPhoneError('Invalid Phone Number.');
     return;
   }
 
@@ -60,10 +62,9 @@ const handleSubmit = (e) => {
   }
 
   if (!/^[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}$/i.test(postcode)) {
-    setPostcodeError('Invalid UK postcode');
+    setPostcodeError('Invalid UK postcode.');
     return;
   }
-
 
   const contact = {   FullName: name,
     EmailAddress: email,
@@ -79,7 +80,6 @@ const handleSubmit = (e) => {
       Country: country} };
 
   setLoading(true);
-console.log(contact);
   fetch('https://interview-assessment.api.avamae.co.uk/api/v1/contact-us/submit',  {
   method: 'POST',
   headers: {
@@ -136,7 +136,7 @@ console.log(contact);
                 <div>
                   <p>Email Address</p>
                   <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} id='emailInput'/>
-              </div>
+                </div>
   
             </div>
 
@@ -157,7 +157,7 @@ console.log(contact);
               <button id='newPhone' className='inputStyle' onClick={toggleSecondPhone}>{ !secondPhone ? 'Add new phone number' : 'Remove phone number' }</button>
 
               <div>
-              <span className='error'>{messageError}</span>
+                <span className='error'>{messageError}</span>
                 <p>Message<span style={{marginLeft:150}}>{message.length}/500</span></p>
                 <textarea type="text" name="message" value={message} onChange={(e) => setMessage(e.target.value)} className='inputStyle' placeholder='Maximum Text Length is 500 characters'/>
               </div>
@@ -189,46 +189,46 @@ console.log(contact);
 
               { showAddress ?
 
-              <section>
+        <section>
 
-              <div className='formFirstRow'>
-                
-              <div>
-                <p>Address line 1</p>
-                <input type="text" name="addressOne" value={addressOne} onChange={(e) => setAddressOne(e.target.value)} id='addressInput' style={{marginRight:20}}/>
-              </div>
+                <div className='formFirstRow'>
+                  
+                    <div>
+                      <p>Address line 1</p>
+                      <input type="text" name="addressOne" value={addressOne} onChange={(e) => setAddressOne(e.target.value)} id='addressInput' style={{marginRight:20}}/>
+                    </div>
 
-                <div>
-                  <p>Address line 2</p>
-                  <input type="text" name="addressTwo" value={addressTwo} onChange={(e) => setAddressTwo(e.target.value)} id='addressTwoInput'/>
-              </div>
-  
-            </div>
+                      <div>
+                        <p>Address line 2</p>
+                        <input type="text" name="addressTwo" value={addressTwo} onChange={(e) => setAddressTwo(e.target.value)} id='addressTwoInput'/>
+                    </div>
+    
+                </div>
 
             
-            <article className='formSecondRow'>
+             <article className='formSecondRow'>
               
-              <div>
-                <p>City/Town</p>
-                <input type="city" name="city" value={city} onChange={(e) => setCity(e.target.value)} id='cityInput' className='addressInputs'/>
-              </div>
-                <div>
-                  <p>State/County</p>
-                  <input type="county" name="county" value={county} onChange={(e) => setCounty(e.target.value)} id='countyInput' className='addressInputs'/>
-              </div>
+                    <div>
+                      <p>City/Town</p>
+                      <input type="city" name="city" value={city} onChange={(e) => setCity(e.target.value)} id='cityInput' className='addressInputs'/>
+                    </div>
+                      <div>
+                        <p>State/County</p>
+                        <input type="county" name="county" value={county} onChange={(e) => setCounty(e.target.value)} id='countyInput' className='addressInputs'/>
+                    </div>
 
-              <div>
-                <p>Postcode</p>
-                <input type="text" name="postcode" value={postcode} onChange={(e) => setPostcode(e.target.value)} id='postcode' className='addressInputs'/>
-                {postcodeError && <span className="error">{postcodeError}</span>}
-              </div>
+                    <div>
+                      <p>Postcode</p>
+                      <input type="text" name="postcode" value={postcode} onChange={(e) => setPostcode(e.target.value)} id='postcode' className='addressInputs'/>
+                      {postcodeError && <span className="error">{postcodeError}</span>}
+                    </div>
 
-                <div>
-                  <p>Country</p>
-                  <input type="text" name="country" value={country} onChange={(e) => setCountry(e.target.value)} id='country' className='addressInputs'/>
-              </div>
+                      <div>
+                        <p>Country</p>
+                        <input type="text" name="country" value={country} onChange={(e) => setCountry(e.target.value)} id='country' className='addressInputs'/>
+                    </div>
 
-            </article>
+              </article>
 
 
             </section>

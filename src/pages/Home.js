@@ -81,7 +81,7 @@ function Home() {
 
                           <Link id="learnMore" to="/about-us" >
                               <a >Learn More</a>
-                            </Link>
+                          </Link>
 
               </div>
 
@@ -99,8 +99,8 @@ function Home() {
 
               <p>Massa massa ultricies mi quis hendrerit dolor magna eget. Ligula ullamcorper malesuada proin libero nunc consequat interdum varius. Ut porttitor leo a diam sollicitudin. Venenatis cras sed felis eget velit aliquet sagittis id consectetur.</p>
               <Link id="loginCenter" to="#" >
-                              <a >Log in</a>
-                            </Link>
+                 <a>Log in</a>
+              </Link>
             </div>
 
 
