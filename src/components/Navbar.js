@@ -26,18 +26,18 @@ even though it is a bit unwieldly! */
                   <a id='homeButton'>HOME</a>
                 </Link>
 
-            <Link className="buttons" to="/about-us" >
-              <a id='aboutButton'>ABOUT US</a>
-            </Link>
+                <Link className="buttons" to="/about-us" >
+                  <a id='aboutButton'>ABOUT US</a>
+                </Link>
 
-            <Link className="buttons" to="/contact-us" >
-              <a id='contactButton'>CONTACT US</a>
-            </Link>
+                <Link className="buttons" to="/contact-us" >
+                  <a id='contactButton'>CONTACT US</a>
+                </Link>
 
-            <Link id='logInButton' to="#" >
-              <a>Log in</a>
-            </Link>
-        </div>
+                <Link id='logInButton' to="#" >
+                  <a>Log in</a>
+                </Link>
+            </div>
       
       </nav>
     );

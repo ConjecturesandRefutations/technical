@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane, faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import ClipLoader from "react-spinners/ClipLoader";
@@ -32,10 +32,10 @@ function ContactUs() {
   const [messageError, setMessageError] = useState('');
   const [postcodeError, setPostcodeError] = useState('');
 
-  useEffect(() => {
+   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+ 
   const toggleSecondPhone = (e) => {
     e.preventDefault(); 
     setSecondPhone(!secondPhone); 
@@ -61,7 +61,7 @@ function ContactUs() {
     return;
   }
 
-  if (!/^[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}$/i.test(postcode)) {
+  if (showAddress && !/^[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}$/i.test(postcode)) {
     setPostcodeError('Invalid UK postcode.');
     return;
   }
@@ -140,8 +140,6 @@ function ContactUs() {
   
             </div>
 
-            <span className='error'>{phoneError}</span>
-
               <div>
                 <p>Phone number 01 - <span style={{fontStyle:'italic'}}>optional</span></p>
                 <input type="tel" name="phoneOne" value={phoneOne} onChange={(e) => setPhoneOne(e.target.value)} className='inputStyle'/>
@@ -153,6 +151,8 @@ function ContactUs() {
                 <input  type="tel" name="phoneTwo" value={phoneTwo} onChange={(e) => setPhoneTwo(e.target.value)} className='inputStyle' style={{marginBottom:20}}/>
               </div>
               }
+
+              <span className='error'>{phoneError}</span>
 
               <button id='newPhone' className='inputStyle' onClick={toggleSecondPhone}>{ !secondPhone ? 'Add new phone number' : 'Remove phone number' }</button>
 

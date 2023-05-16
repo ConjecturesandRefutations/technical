@@ -53,8 +53,7 @@ function Home() {
               </Link>
 
             </div> 
-
-            
+          
 
             <div className='arrows'>
                 <button className='arrowLeft' onClick={toggleLeft}><FontAwesomeIcon icon={faCaretLeft} /></button>
