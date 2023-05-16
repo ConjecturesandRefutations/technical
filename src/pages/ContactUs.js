@@ -157,9 +157,9 @@ function ContactUs() {
               <button id='newPhone' className='inputStyle' onClick={toggleSecondPhone}>{ !secondPhone ? 'Add new phone number' : 'Remove phone number' }</button>
 
               <div>
-                <span className='error'>{messageError}</span>
                 <p>Message<span style={{marginLeft:150}}>{message.length}/500</span></p>
                 <textarea type="text" name="message" value={message} onChange={(e) => setMessage(e.target.value)} className='inputStyle' placeholder='Maximum Text Length is 500 characters'/>
+                <span className='error'>{messageError}</span>
               </div>
 
               <div id='checkbox'>
