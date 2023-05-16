@@ -7,6 +7,7 @@ import ContactImage from './../images/Img_Contact.png'
 
 function ContactUs() {
 
+  /* Constants for the form input fields */
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneOne, setPhoneOne] = useState("");
@@ -19,14 +20,17 @@ function ContactUs() {
   const [postcode, setPostcode] = useState("");
   const [country, setCountry] = useState("");
 
+  /* For whether or not the form has been submitted */
   const [submitted, setSubmitted] = useState(false);
 
+  /* For the Loading spinner */
   const [loading, setLoading] = useState(false);
 
+  /* For expanding the form and showing additional input fields */
   const [showAddress, setShowAddress] = useState(false);
-
   const [secondPhone, setSecondPhone] = useState(false);
 
+  /* For different types of errors */
   const [requiredError, setRequiredError] = useState('');
   const [phoneError, setPhoneError] = useState('');
   const [messageError, setMessageError] = useState('');
