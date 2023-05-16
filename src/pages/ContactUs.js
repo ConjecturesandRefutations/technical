@@ -30,6 +30,7 @@ function ContactUs() {
   const [requiredError, setRequiredError] = useState('');
   const [phoneError, setPhoneError] = useState('');
   const [messageError, setMessageError] = useState('');
+  const [postcodeError, setPostcodeError] = useState('');
 
 
   const toggleSecondPhone = (e) => {
@@ -55,6 +56,11 @@ const handleSubmit = (e) => {
 
   if (message.length>500) {
     setMessageError('Please keep message below 500 characters.');
+    return;
+  }
+
+  if (!/^[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}$/i.test(postcode)) {
+    setPostcodeError('Invalid UK postcode');
     return;
   }
 
@@ -214,6 +220,7 @@ console.log(contact);
               <div>
                 <p>Postcode</p>
                 <input type="text" name="postcode" value={postcode} onChange={(e) => setPostcode(e.target.value)} id='postcode' className='addressInputs'/>
+                {postcodeError && <span className="error">{postcodeError}</span>}
               </div>
 
                 <div>
