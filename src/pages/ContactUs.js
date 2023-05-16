@@ -220,7 +220,7 @@ function ContactUs() {
                     <div>
                       <p>Postcode</p>
                       <input type="text" name="postcode" value={postcode} onChange={(e) => setPostcode(e.target.value)} id='postcode' className='addressInputs'/>
-                      {postcodeError && <span className="error">{postcodeError}</span>}
+                      {postcodeError && <span id='postError' className="error">{postcodeError}</span>}
                     </div>
 
                       <div>

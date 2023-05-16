@@ -185,6 +185,7 @@ hr {
 
 .secondText > p, ul {
   font-size: x-small;
+  line-height: 2;
 }
 
 .firstList{
@@ -211,6 +212,7 @@ hr {
     text-decoration: none;
     font-size: x-small;
     font-weight: bold;
+    margin-bottom: 20px;
 }
 
 #loginCenter{
@@ -368,6 +370,7 @@ min-width: 270px;
   margin-right: 16%;
   column-count: 3;
   column-gap: 20px;
+  line-height: 2;
 }
 
 @media (max-width: 780px) {
@@ -778,4 +781,8 @@ margin-left: 15px;
 .error{
   color: red;
   font-weight: bold;
+}
+
+#postError{
+  white-space: nowrap;
 }
