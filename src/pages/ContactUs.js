@@ -27,7 +27,10 @@ function ContactUs() {
 
   const [secondPhone, setSecondPhone] = useState(false);
 
-  const [error, setError] =  useState('')
+  const [requiredError, setRequiredError] = useState('');
+  const [phoneError, setPhoneError] = useState('');
+  const [messageError, setMessageError] = useState('');
+
 
   const toggleSecondPhone = (e) => {
     e.preventDefault(); 
@@ -38,10 +41,23 @@ function ContactUs() {
 const handleSubmit = (e) => {
   e.preventDefault();
 
+/* Error Handling */
+
   if (!name || !email || !message) {
-    setError('Please fill in all required fields.');
-    return; 
+    setRequiredError('Please fill in all required fields.');
+    return;
+  } 
+  
+  if (phoneOne.length > 20 || phoneTwo.length > 20 ) {
+    setPhoneError('Invalid Phone Number');
+    return;
   }
+
+  if (message.length>500) {
+    setMessageError('Please keep message below 500 characters.');
+    return;
+  }
+
 
   const contact = {   FullName: name,
     EmailAddress: email,
@@ -103,7 +119,7 @@ console.log(contact);
 
           <form className='contactForm' onSubmit={handleSubmit}>
 
-            <span style={{color:'red', fontWeight:'bold'}}>{error}</span>
+            <span className='error'>{requiredError}</span>
 
             <div className='formFirstRow'>
               <div>
@@ -117,6 +133,8 @@ console.log(contact);
               </div>
   
             </div>
+
+            <span className='error'>{phoneError}</span>
 
               <div>
                 <p>Phone number 01 - <span style={{fontStyle:'italic'}}>optional</span></p>
@@ -133,7 +151,8 @@ console.log(contact);
               <button id='newPhone' className='inputStyle' onClick={toggleSecondPhone}>{ !secondPhone ? 'Add new phone number' : 'Remove phone number' }</button>
 
               <div>
-                <p>Message</p>
+              <span className='error'>{messageError}</span>
+                <p>Message<span style={{marginLeft:150}}>{message.length}/500</span></p>
                 <textarea type="text" name="message" value={message} onChange={(e) => setMessage(e.target.value)} className='inputStyle' placeholder='Maximum Text Length is 500 characters'/>
               </div>
 

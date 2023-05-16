@@ -772,3 +772,10 @@ margin-left: 15px;
    justify-content: center;
   }
 }
+
+/* ERROR */
+
+.error{
+  color: red;
+  font-weight: bold;
+}
