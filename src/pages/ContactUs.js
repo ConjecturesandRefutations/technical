@@ -192,8 +192,8 @@ function ContactUs() {
                   <FontAwesomeIcon className="fa" icon={faPaperPlane} />
                   <input type="submit" name="submit" id="submit" value="Sending!" disabled/>
               </div> 
-
               } 
+              <span className='error'>{addressError}</span>
                             
               {loading ? <ClipLoader color="#36d7b7" className="clipLoader"/> : null}
 
@@ -238,7 +238,6 @@ function ContactUs() {
                         <p>Country</p>
                         <input type="text" name="country" value={country} onChange={(e) => setCountry(e.target.value)} id='country' className='addressInputs'/>
                     </div>
-                    <span className='error'>{addressError}</span>
 
               </article>
 
