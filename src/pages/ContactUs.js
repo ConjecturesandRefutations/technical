@@ -35,6 +35,7 @@ function ContactUs() {
   const [phoneError, setPhoneError] = useState('');
   const [messageError, setMessageError] = useState('');
   const [postcodeError, setPostcodeError] = useState('');
+  const [addressError, setAddressError] = useState('');
 
    useEffect(() => {
     window.scrollTo(0, 0);
@@ -70,6 +71,11 @@ function ContactUs() {
     return;
   }
 
+  if ((showAddress && (!addressOne || !city || !county || !country))) {
+    setAddressError('Include all address details or uncheck `Add address details`.');
+    return;
+  }  
+
   const contact = {   FullName: name,
     EmailAddress: email,
     PhoneNumbers: [phoneOne, phoneTwo].filter(Boolean), 
@@ -92,6 +98,7 @@ function ContactUs() {
   body: JSON.stringify(contact)
   }).then(() => {
     console.log('message sent')
+    console.log(contact)
     setName("");
     setEmail("");
     setPhoneOne("");
@@ -231,6 +238,7 @@ function ContactUs() {
                         <p>Country</p>
                         <input type="text" name="country" value={country} onChange={(e) => setCountry(e.target.value)} id='country' className='addressInputs'/>
                     </div>
+                    <span className='error'>{addressError}</span>
 
               </article>
 
