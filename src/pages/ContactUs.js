@@ -136,8 +136,6 @@ function ContactUs() {
 
           <form className='contactForm' onSubmit={handleSubmit}>
 
-            <span className='error'>{requiredError}</span>
-
             <div className='formFirstRow'>
               <div>
                 <p>Full name</p>
@@ -179,6 +177,7 @@ function ContactUs() {
                 <label>Add address details</label>
               </div>
 
+              <span className='error'>{requiredError}</span>
               {!loading ? 
               
               <div className='submitButton'>
